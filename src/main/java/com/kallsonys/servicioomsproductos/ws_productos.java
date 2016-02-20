@@ -21,6 +21,7 @@ import javax.jws.WebParam;
 @WebService(serviceName = "ws_productos")
 public class ws_productos {
 
+    conectarBDD cn = new conectarBDD();
     /**
      * Web service operation
      */
@@ -35,8 +36,13 @@ public class ws_productos {
         
         try
         {
-            conectarBDD cn = conectarBDD();
+           
+            //cn = conectarBDD();
             dbConnection = cn.conectarSQLServer();
+            //cs = dbConnection.prepareCall(Constants.SP_CONSULTAR_USUARIOS);
+            //int pos = 0;
+            //cs.registerOutParameter(++pos, OracleTypes.CURSOR);
+            //cs.execute();
         }
         catch (Exception e) 
         {

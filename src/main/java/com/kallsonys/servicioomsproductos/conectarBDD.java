@@ -11,7 +11,7 @@ package com.kallsonys.servicioomsproductos;
  */
 public class conectarBDD 
 {
-     private java.sql.Connection cn=null;
+    private java.sql.Connection cn=null;
    
     public java.sql.Connection conectarSQLServer ()
     {
