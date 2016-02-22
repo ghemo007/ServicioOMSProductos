@@ -39,10 +39,26 @@ public class ws_productos {
            
             //cn = conectarBDD();
             dbConnection = cn.conectarSQLServer();
-            //cs = dbConnection.prepareCall(Constants.SP_CONSULTAR_USUARIOS);
-            //int pos = 0;
-            //cs.registerOutParameter(++pos, OracleTypes.CURSOR);
-            //cs.execute();
+            CallableStatement cstmt = dbConnection.prepareCall("{call dbo.PRODUCTOS_Select()}");
+            cstmt.execute();
+            
+            System.out.println(cstmt.getInt(1));
+     
+            //  los parametros de salida OUT
+            rs = (ResultSet) cstmt.getObject(1);
+            
+            while (rs.next()) 
+            {
+                producto PRD = new producto();
+                PRD.setID(rs.getInt("ID"));
+                PRD.setPRODUCTO_ID(rs.getInt("PRODUCTO_ID"));
+                PRD.setNOMBRE(rs.getString("NOMBRE"));
+                listado.add(PRD);
+
+            }
+            
+            return listado;
+            
         }
         catch (Exception e) 
         {
