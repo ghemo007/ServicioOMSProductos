@@ -19,38 +19,40 @@ import javax.jws.WebParam;
  * @author GermanO
  */
 @WebService(serviceName = "ws_productos")
-public class ws_productos {
-
-    conectarBDD cn = new conectarBDD();
+public class ws_productos 
+{
     /**
      * Web service operation
      */
     @WebMethod(operationName = "consultarPRODUCTOS")
     public List<producto> consultarPRODUCTOS() 
     {
+        
+        conectarBDD cn = new conectarBDD();
         //TODO write your implementation code here:ç
         List<producto> listado = new ArrayList<producto>();
+        
         Connection dbConnection = null;
         CallableStatement cs = null;
         ResultSet rs = null;
+        String resultado = null;
         
         try
         {
            
             //cn = conectarBDD();
             dbConnection = cn.conectarSQLServer();
-            CallableStatement cstmt = dbConnection.prepareCall("{call dbo.PRODUCTOS_Select()}");
-            cstmt.execute();
+            CallableStatement cstmt;
+            cstmt = dbConnection.prepareCall(constantes.PRODUCTOS_Select);
             
-            System.out.println(cstmt.getInt(1));
-     
-            //  los parametros de salida OUT
-            rs = (ResultSet) cstmt.getObject(1);
+            rs = cstmt.executeQuery();           
             
+          
             while (rs.next()) 
             {
                 producto PRD = new producto();
                 PRD.setID(rs.getInt("ID"));
+                //PRD.setNOMBRE("NOMBRE");
                 PRD.setPRODUCTO_ID(rs.getInt("PRODUCTO_ID"));
                 PRD.setNOMBRE(rs.getString("NOMBRE"));
                 listado.add(PRD);
@@ -63,36 +65,9 @@ public class ws_productos {
         catch (Exception e) 
         {
             e.printStackTrace();
-        } 
+            resultado = e.getMessage();
+        }      
         return null;
-    }
-
-    /*
+    }    
     
-        try {
-            ConnectDB cn = new ConnectDB();
-            dbConnection = cn.connectOracle();
-            cs = dbConnection.prepareCall(Constants.SP_CONSULTAR_USUARIOS);
-            int pos = 0;
-            cs.registerOutParameter(++pos, OracleTypes.CURSOR);
-            cs.execute();
-            
-              //  los parametros de salida OUT
-            rs = (ResultSet) cs.getObject(1);
-            
-            while (rs.next()) 
-            {
-
-                  Usuario u = new Usuario();
-                  u.setUsuarioid(rs.getInt("usuario_id"));
-                  u.setUsuario(rs.getString("usuario"));
-                  u.setClave(rs.getString("clave"));
-                  u.setEstado(rs.getString("estado"));
-                  
-                  lista.add(u);
-
-            }
-            
-            return lista;
-    */
 }
