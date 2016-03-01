@@ -21,15 +21,17 @@ import javax.jws.WebParam;
 @WebService(serviceName = "ws_productos")
 public class ws_productos 
 {
+    
+    
     /**
      * Web service operation
      */
     @WebMethod(operationName = "consultarPRODUCTOS")
-    public List<producto> consultarPRODUCTOS() 
+    public List<producto> consultarPRODUCTOS(@WebParam(name = "NUMERO_PAGINA") int NUMERO_PAGINA,@WebParam(name = "TAMANO_PAGINA") int TAMANO_PAGINA) 
     {
         
         conectarBDD cn = new conectarBDD();
-        //TODO write your implementation code here:ç
+        
         List<producto> listado = new ArrayList<producto>();
         
         Connection dbConnection = null;
@@ -45,8 +47,11 @@ public class ws_productos
             CallableStatement cstmt;
             cstmt = dbConnection.prepareCall(constantes.PRODUCTOS_Select);
             
-            rs = cstmt.executeQuery();           
+            cstmt.setInt(1,NUMERO_PAGINA);
+            cstmt.setInt(2,TAMANO_PAGINA);
             
+            //cstmt.registerOutParameter(resultado, TAMANO_PAGINA);
+            rs = cstmt.executeQuery();            
           
             while (rs.next()) 
             {
@@ -60,6 +65,8 @@ public class ws_productos
             }
             
             return listado;
+            
+            
             
         }
         catch (Exception e) 

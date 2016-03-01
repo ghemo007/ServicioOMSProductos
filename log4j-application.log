@@ -1,0 +1,36 @@
+2016-02-24 00:05:55 ERROR conectarBDD:48 - This is an Error java.sql.SQLException: No suitable driver found for "jdbc:jtds:sqlserver://192.168.0.5:1433/AES_PICA_PRODUCTOS;instance=SQL2008;"
+2016-02-24 00:05:55 DEBUG log4j:65 - This is a Debug
+2016-02-24 00:05:55 INFO  log4j:66 - This is an Info
+2016-02-24 00:05:55 WARN  log4j:67 - This is a Warn
+2016-02-24 00:05:55 ERROR log4j:68 - This is an Error
+2016-02-24 00:05:55 FATAL log4j:69 - This is a Fatal
+2016-02-24 00:14:10 ERROR conectarBDD:48 - This is an Error java.sql.SQLException: No suitable driver found for "jdbc:jtds:sqlserver://192.168.0.5:1433/AES_PICA_PRODUCTOS;instance=SQL2008;"
+2016-02-24 00:14:10 DEBUG log4j:65 - This is a Debug
+2016-02-24 00:14:10 INFO  log4j:66 - This is an Info
+2016-02-24 00:14:10 WARN  log4j:67 - This is a Warn
+2016-02-24 00:14:10 ERROR log4j:68 - This is an Error
+2016-02-24 00:14:10 FATAL log4j:69 - This is a Fatal
+2016-02-24 00:15:33 ERROR conectarBDD:48 - This is an Error java.sql.SQLException: No suitable driver found for "jdbc:jtds:sqlserver://192.168.0.5:1433/AES_PICA_PRODUCTOS;instance=SQL2008;"
+2016-02-24 00:15:33 DEBUG log4j:65 - This is a Debug
+2016-02-24 00:15:33 INFO  log4j:66 - This is an Info
+2016-02-24 00:15:33 WARN  log4j:67 - This is a Warn
+2016-02-24 00:15:33 ERROR log4j:68 - This is an Error
+2016-02-24 00:15:33 FATAL log4j:69 - This is a Fatal
+2016-02-24 00:18:09 ERROR conectarBDD:48 - This is an Error java.sql.SQLException: No suitable driver found for "jdbc:jtds:sqlserver://192.168.0.5:1433/AES_PICA_PRODUCTOS;instance=SQL2008;"
+2016-02-24 00:18:09 DEBUG log4j:65 - This is a Debug
+2016-02-24 00:18:09 INFO  log4j:66 - This is an Info
+2016-02-24 00:18:09 WARN  log4j:67 - This is a Warn
+2016-02-24 00:18:09 ERROR log4j:68 - This is an Error
+2016-02-24 00:18:09 FATAL log4j:69 - This is a Fatal
+2016-02-24 08:33:35 ERROR conectarBDD:48 - Error java.sql.SQLException: Network error IOException: Operation timed out
+2016-02-24 08:33:35 DEBUG log4j:65 - This is a Debug
+2016-02-24 08:33:35 INFO  log4j:66 - This is an Info
+2016-02-24 08:33:35 WARN  log4j:67 - This is a Warn
+2016-02-24 08:33:35 ERROR log4j:68 - This is an Error
+2016-02-24 08:33:35 FATAL log4j:69 - This is a Fatal
+2016-02-24 08:36:27 ERROR conectarBDD:48 - Error java.sql.SQLException: Network error IOException: Operation timed out
+2016-02-24 09:43:44 DEBUG log4j:68 - This is a Debug
+2016-02-24 09:43:44 INFO  log4j:69 - This is an Info
+2016-02-24 09:43:44 WARN  log4j:70 - This is a Warn
+2016-02-24 09:43:44 ERROR log4j:71 - This is an Error
+2016-02-24 09:43:44 FATAL log4j:72 - This is a Fatal
