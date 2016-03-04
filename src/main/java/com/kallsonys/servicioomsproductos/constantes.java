@@ -11,6 +11,12 @@ package com.kallsonys.servicioomsproductos;
  */
 public class constantes 
 {
-     public static String PRODUCTOS_Select =
-            utilidadesSQL.buildProcedureCall("dbo", "PRODUCTOS_Select",2);    
+    public static String PRODUCTOS_LISTA =
+            utilidadesSQL.buildProcedureCall("dbo", "PRODUCTOS_LISTA",2);
+    public static String PRODUCTOS_ID =
+            utilidadesSQL.buildProcedureCall("dbo", "PRODUCTOS_ID",1);
+    public static String PRODUCTOS_NOMBRE =
+            utilidadesSQL.buildProcedureCall("dbo", "PRODUCTOS_NOMBRE",3);
+    public static String PRODUCTOS_DESCRIPCION =
+            utilidadesSQL.buildProcedureCall("dbo", "PRODUCTOS_DESCRIPCION",3);
 }
