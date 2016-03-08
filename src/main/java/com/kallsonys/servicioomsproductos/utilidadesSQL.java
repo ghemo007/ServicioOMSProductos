@@ -19,7 +19,8 @@ public class utilidadesSQL
     public static String buildProcedureCall(String packageName, String procedureName, int paramCount) 
     {
         StringBuilder sb = new StringBuilder("{call "+packageName+"."+procedureName+"(");
-        for (int n = 1; n <= paramCount; n++) {
+        for (int n = 1; n <= paramCount; n++) 
+        {
             sb.append("?");
             if (n < paramCount) sb.append(",");
         }

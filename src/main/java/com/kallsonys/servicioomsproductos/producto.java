@@ -20,6 +20,7 @@ public class producto
     private int PRECIO_LISTA;
     private String FABRICANTE;
     private String IMAGEN_URL;
+    private int CANTIDAD_REGISTROS;
                 
     
     
@@ -109,6 +110,17 @@ public class producto
     public void setIMAGEN_URL(String IMAGEN_URL) 
     {
         this.IMAGEN_URL = IMAGEN_URL;
-    }     
+    }  
+    
+    //CANTIDAD_REGISTROS
+    public int getCANTIDAD_REGISTROS() 
+    {
+        return CANTIDAD_REGISTROS;
+    }   
+    
+    public void setCANTIDAD_REGISTROS(int CANTIDAD_REGISTROS) 
+    {
+        this.CANTIDAD_REGISTROS = CANTIDAD_REGISTROS;
+    }  
     
 }

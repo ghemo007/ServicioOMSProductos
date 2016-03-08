@@ -9,10 +9,13 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+
+import javax.xml.ws.Holder;
 
 /**
  *
@@ -26,11 +29,12 @@ public class ws_productos
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "consultarPRODUCTOS_LISTA")
-    public List<producto> consultarPRODUCTOS_LISTA(@WebParam(name = "NUMERO_PAGINA") int NUMERO_PAGINA,@WebParam(name = "TAMANO_PAGINA") int TAMANO_PAGINA) 
+    @WebMethod(operationName = "consultarPRODUCTOS_LISTA")    
+    public List<producto> consultarPRODUCTOS_LISTA(@WebParam(name = "NUMERO_PAGINA") int NUMERO_PAGINA,
+                                                   @WebParam(name = "TAMANO_PAGINA") int TAMANO_PAGINA)
     {        
         conectarBDD cn = new conectarBDD();        
-        List<producto> listado = new ArrayList<producto>();        
+        List<producto> listado = new ArrayList<producto>();  
         Connection dbConnection = null;
         CallableStatement cs = null;
         ResultSet rs = null;
@@ -44,7 +48,6 @@ public class ws_productos
             cstmt.setInt(1,NUMERO_PAGINA);
             cstmt.setInt(2,TAMANO_PAGINA);
             rs = cstmt.executeQuery();            
-          
             while (rs.next()) 
             {
                 producto PRD = new producto();
@@ -56,10 +59,12 @@ public class ws_productos
                 PRD.setPRECIO_LISTA(rs.getInt("PRECIO_LISTA"));                
                 PRD.setFABRICANTE(rs.getString("FABRICANTE"));
                 //PRD.setNOMBRE(rs.getString("IMAGEN"));
-                PRD.setIMAGEN_URL(rs.getString("IMAGEN_URL"));                
+                PRD.setIMAGEN_URL(rs.getString("IMAGEN_URL"));
+                PRD.setCANTIDAD_REGISTROS(rs.getInt("CANTIDAD_REGISTROS"));
                 listado.add(PRD);
             }            
             return listado;
+            
         }
         catch (Exception e) 
         {
@@ -195,7 +200,9 @@ public class ws_productos
                 PRD.setPRECIO_LISTA(rs.getInt("PRECIO_LISTA"));                
                 PRD.setFABRICANTE(rs.getString("FABRICANTE"));
                 //PRD.setNOMBRE(rs.getString("IMAGEN"));
-                PRD.setIMAGEN_URL(rs.getString("IMAGEN_URL"));               
+                PRD.setIMAGEN_URL(rs.getString("IMAGEN_URL"));   
+                PRD.setCANTIDAD_REGISTROS(rs.getInt("CANTIDAD_REGISTROS"));
+                
                 listado.add(PRD);
             }            
             return listado;
@@ -207,4 +214,5 @@ public class ws_productos
         }      
         return null;
     }
+
 }
