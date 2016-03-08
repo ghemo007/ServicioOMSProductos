@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
-  <endpoint implementation="com.kallsonys.servicioomsproductos.ws_productos" name="ws_productos" url-pattern="/ws_productos"/>
+  <endpoint implementation="com.kallsonys.servicioomsproductos.consultarProductos" name="consultarProductos" url-pattern="/consultarProductos"/>
 </endpoints>
